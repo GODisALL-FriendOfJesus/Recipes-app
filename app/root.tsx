@@ -1,12 +1,29 @@
-import { type RouteConfig, index, layout, route } from "@react-router/dev/routes";
+import {
+  Links,
+  Meta,
+  Outlet,
+  Scripts,
+  ScrollRestoration,
+} from "react-router";
 
-export default [
-  layout("routes/app-layout.tsx", [
-    index("routes/discover.tsx"),
-    route("discover", "routes/discover.tsx", { id: "discover-page" }),
-    route("recipes", "routes/recipes.tsx"),
-    route("pantry", "routes/pantry.tsx"),
-    route("settings", "routes/settings.tsx"),
-    route("login", "routes/login.tsx"),
-  ]),
-] satisfies RouteConfig;
+export function Layout({ children }: { children: React.ReactNode }) {
+  return (
+    <html lang="en">
+      <head>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <Meta />
+        <Links />
+      </head>
+      <body>
+        {children}
+        <ScrollRestoration />
+        <Scripts />
+      </body>
+    </html>
+  );
+}
+
+export default function App() {
+  return <Outlet />;
+}
