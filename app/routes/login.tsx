@@ -1,8 +1,16 @@
-export default function LoginPage() {
-  return (
-    <div>
-      <h1 className="text-2xl font-bold">Login</h1>
-      <p className="mt-2 text-slate-600">Sign in to your account.</p>
-    </div>
-  );
-}
+import {
+  type RouteConfig,
+  index,
+  layout,
+  route,
+} from "@react-router/dev/routes";
+
+export default [
+  layout("routes/app-layout.tsx", [
+    index("routes/discover.tsx"),
+    route("recipes", "routes/recipes.tsx"),
+    route("pantry", "routes/pantry.tsx"),
+    route("settings", "routes/settings.tsx"),
+  ]),
+  route("login", "routes/login.tsx"),
+] satisfies RouteConfig;
