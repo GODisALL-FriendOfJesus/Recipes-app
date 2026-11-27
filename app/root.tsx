@@ -1,3 +1,4 @@
+ import type { Route } from "./+types/root";
 import {
   Links,
   Meta,
@@ -5,6 +6,9 @@ import {
   Scripts,
   ScrollRestoration,
 } from "react-router";
+import "./app.css";
+
+export const links: Route.LinksFunction = () => [];
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (

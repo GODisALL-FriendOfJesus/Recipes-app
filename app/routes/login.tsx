@@ -12,5 +12,5 @@ export default [
     route("pantry", "routes/pantry.tsx"),
     route("settings", "routes/settings.tsx"),
   ]),
-  route("login", "routes/login.tsx"),
+  route("login", "routes/logn.tsx"),
 ] satisfies RouteConfig;
